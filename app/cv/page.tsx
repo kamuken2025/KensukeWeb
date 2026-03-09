@@ -31,10 +31,7 @@ export default function CvPage() {
       <header style={{ marginBottom: 18 }}>
         <h1 className="h1">CV</h1>
         <p className="muted" style={{ marginTop: 8, marginBottom: 0 }}>
-          履歴書（Web掲載内容をサイト用に整理）
-        </p>
-        <p className="muted small" style={{ marginTop: 6, marginBottom: 0 }}>
-          Source: kamuken.boo.jp / cv.html（最終更新日: 2026-01-08）に基づく要約
+          履歴書
         </p>
       </header>
 
