@@ -55,9 +55,6 @@ export default function ContactPage() {
       {/* Optional: quick links */}
       <section className="card" style={{ marginTop: 14 }}>
         <h2 className="h2">Links</h2>
-        <p className="muted" style={{ marginTop: 0 }}>
-          参考リンクを置く場合はここに追加できます（GitHub、Google Scholar 等）。
-        </p>
         <ul className="list">
           <li>
             GitHub:{" "}
