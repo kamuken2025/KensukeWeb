@@ -99,15 +99,10 @@ export default function Home() {
             </div>
 
             <div className="ctaRow">
-              <Link className="btn btnPrimary" href="/about">
-                About
-              </Link>
-              <Link className="btn" href="/projects">
-                Projects
-              </Link>
-              <Link className="btn" href="/contact">
-                Contact
-              </Link>
+              <Link className="btn btnPrimary" href="/about">About</Link>
+			  <Link className="btn" href="/projects">Projects</Link>
+			  <Link className="btn" href="/contact">Contact</Link>
+			  <Link className="btn" href="/cv">CV</Link>
             </div>
           </div>
 
