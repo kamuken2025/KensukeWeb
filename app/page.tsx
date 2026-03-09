@@ -109,13 +109,6 @@ export default function Home() {
                 Contact
               </Link>
             </div>
-
-            {/* 現行サイトの雰囲気（メニュー的導線）を残す */}
-            <nav className="nav" aria-label="main navigation" style={{ marginTop: 16 }}>
-              <Link href="/about">Profile</Link>
-              <Link href="/projects">Research / Projects</Link>
-              <Link href="/contact">Contact</Link>
-            </nav>
           </div>
 
           {/* 右：写真＋簡易プロフィール（スマホでは上に回り込む） */}
