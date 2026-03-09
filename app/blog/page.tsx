@@ -1,22 +1,38 @@
 import Link from "next/link";
+import { getAllPosts } from "@/lib/blog";
 
 export default function BlogIndexPage() {
+  const posts = getAllPosts();
+
   return (
     <main className="container">
       <header style={{ marginBottom: 18 }}>
         <h1 className="h1">Blog</h1>
         <p className="muted" style={{ marginTop: 8, marginBottom: 0 }}>
-          日記（ブログ）
+          日記（Markdownで追加 → pushで公開）
         </p>
       </header>
 
       <section className="card">
-        <p style={{ marginTop: 0 }}>
-          ここに記事一覧を作っていきます（まずはページを作成して404を解消）。
-        </p>
-        <p className="muted" style={{ marginBottom: 0 }}>
-          記事は <code>content/blog</code> にMarkdownで追加する予定です。
-        </p>
+        {posts.length === 0 ? (
+          <p className="muted" style={{ margin: 0 }}>
+            まだ記事がありません。<code>content/blog</code> に .md を追加してください。
+          </p>
+        ) : (
+          <ul style={{ margin: 0, paddingLeft: 18 }}>
+            {posts.map((p) => (
+              <li key={p.slug} style={{ marginBottom: 10 }}>
+                <Link href={`/blog/${p.slug}`} style={{ fontWeight: 700 }}>
+                  {p.title}
+                </Link>
+                <div className="muted" style={{ fontSize: 13 }}>
+                  {p.date}
+                  {p.tags.length ? ` · ${p.tags.join(", ")}` : ""}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
 
       <footer className="footer">
