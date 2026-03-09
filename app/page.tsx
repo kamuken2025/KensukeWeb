@@ -100,9 +100,10 @@ export default function Home() {
 
             <div className="ctaRow">
               <Link className="btn btnPrimary" href="/about">About</Link>
-			  <Link className="btn" href="/projects">Projects</Link>
-			  <Link className="btn" href="/contact">Contact</Link>
-			  <Link className="btn" href="/cv">CV</Link>
+			        <Link className="btn" href="/projects">Projects</Link>
+			        <Link className="btn" href="/contact">Contact</Link>
+			        <Link className="btn" href="/cv">CV</Link>
+              <Link className="btn" href="/blog">Blog</Link>
             </div>
           </div>
 
@@ -171,7 +172,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="footer">
-        <span>© {new Date().getFullYear()} Kensuke Kawamura</span>
+        <span>© {new Date().getFullYear()} Kensuke Kawamura | </span>
         <span className="muted">
           <Link href="/about">About</Link> · <Link href="/projects">Projects</Link> ·{" "}
           <Link href="/contact">Contact</Link>
