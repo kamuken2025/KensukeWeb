@@ -135,7 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3つの強み */}
+      {/* 研究の柱 */}
       <section style={{ marginTop: 18 }}>
         <h2 className="h2">What I do</h2>
         <div className="cards">
