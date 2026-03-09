@@ -3,40 +3,42 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <main style={{ maxWidth: 900, margin: "0 auto", padding: 24, lineHeight: 1.8 }}>
-      {/* ページ内だけに効く簡易CSS */}
+    <main className="container">
+      {/* Aboutページ固有の最小CSS（スマホで画像→文章に並び替え） */}
       <style>{`
-        .overview {
+        .overview{
           display: flex;
           gap: 18px;
           align-items: flex-start;
         }
-        .overviewText {
+        .overviewText{
           flex: 1 1 520px;
           min-width: 280px;
         }
-        .overviewImage {
+        .overviewImage{
           flex: 0 0 auto;
         }
-        /* スマホ（幅が狭いとき）は縦並びにして、画像を上に */
-        @media (max-width: 640px) {
-          .overview {
+        @media (max-width: 640px){
+          .overview{
             flex-direction: column;
           }
-          .overviewImage {
-            order: -1; /* 画像を先頭に */
+          .overviewImage{
+            order: -1;     /* 画像を上に */
             align-self: flex-start;
           }
         }
       `}</style>
 
-      <header style={{ marginBottom: 24 }}>
-        <h1 style={{ marginBottom: 6 }}>About</h1>
-        <p style={{ margin: 0, color: "#555" }}>自己紹介 / Profile</p>
+      <header style={{ marginBottom: 18 }}>
+        <h1 className="h1">About</h1>
+        <p className="muted" style={{ marginTop: 8, marginBottom: 0 }}>
+          自己紹介 / Profile
+        </p>
       </header>
 
-      <section style={{ marginBottom: 28 }}>
-        <h2 style={{ marginBottom: 8 }}>Overview</h2>
+      {/* Overview（画像＋文章） */}
+      <section className="card" style={{ marginBottom: 18 }}>
+        <h2 className="h2">Overview</h2>
 
         <div className="overview">
           <div className="overviewText">
@@ -45,7 +47,7 @@ export default function AboutPage() {
               植生状態や生産性を「見える化」する研究・技術開発に取り組んでいます。
               画像解析・機械学習（深層学習を含む）を用いて、管理判断に役立つ地図や指標を提供することを目指しています。
             </p>
-            <p style={{ color: "#555", marginBottom: 0 }}>
+            <p className="muted" style={{ marginBottom: 0 }}>
               I work on UAV/satellite-based monitoring for grassland and agricultural systems, integrating field
               measurements with image analysis and machine learning to deliver actionable maps and indicators.
             </p>
@@ -60,16 +62,17 @@ export default function AboutPage() {
               style={{ borderRadius: 16, objectFit: "cover" }}
               priority
             />
-            <p style={{ marginTop: 8, marginBottom: 0, color: "#777", fontSize: 12 }}>
-              Photo: profile
+            <p className="muted" style={{ marginTop: 8, marginBottom: 0, fontSize: 12 }}>
+              Photo
             </p>
           </div>
         </div>
       </section>
 
-      <section style={{ marginBottom: 28 }}>
-        <h2 style={{ marginBottom: 8 }}>Focus areas</h2>
-        <ul style={{ marginTop: 0 }}>
+      {/* Focus areas */}
+      <section className="card" style={{ marginBottom: 18 }}>
+        <h2 className="h2">Focus areas</h2>
+        <ul style={{ margin: 0, paddingLeft: 18 }}>
           <li>UAV / satellite remote sensing for vegetation mapping</li>
           <li>Biomass & forage diagnostics (e.g., sward height, yield-related indicators)</li>
           <li>AI/ML modeling for classification and prediction</li>
@@ -77,28 +80,32 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <section style={{ marginBottom: 28 }}>
-        <h2 style={{ marginBottom: 8 }}>Selected outputs</h2>
-        <p style={{ marginTop: 0 }}>研究成果・資料・コードは、必要に応じて以下に整理していきます。</p>
-        <ul style={{ marginTop: 0 }}>
+      {/* Selected outputs */}
+      <section className="card" style={{ marginBottom: 18 }}>
+        <h2 className="h2">Selected outputs</h2>
+        <p style={{ marginTop: 0 }}>
+          研究成果・資料・コードは、必要に応じて以下に整理していきます。
+        </p>
+        <ul style={{ margin: 0, paddingLeft: 18 }}>
           <li>
-            <span style={{ fontWeight: 600 }}>Projects:</span> <Link href="/projects">/projects</Link>
+            <b>Projects:</b> <Link href="/projects">/projects</Link>
           </li>
           <li>
-            <span style={{ fontWeight: 600 }}>Contact:</span> <Link href="/contact">/contact</Link>
+            <b>Contact:</b> <Link href="/contact">/contact</Link>
           </li>
         </ul>
       </section>
 
-      <section style={{ marginBottom: 28 }}>
-        <h2 style={{ marginBottom: 8 }}>Short bio</h2>
-        <p style={{ marginTop: 0, color: "#555" }}>
+      {/* Short bio */}
+      <section className="card">
+        <h2 className="h2">Short bio</h2>
+        <p className="muted" style={{ marginTop: 0, marginBottom: 0 }}>
           帯広畜産大学 草地生態学研究室。草地生態系におけるフィールド調査とリモートセンシング技術を基盤とした教育・研究を進めています。
           産学連携や現場実装も視野に、衛星×UAV×AIによる草地診断の仕組みづくりを行っています。
         </p>
       </section>
 
-      <footer style={{ color: "#777", fontSize: 14 }}>
+      <footer className="footer">
         <Link href="/">← Back to Home</Link>
       </footer>
     </main>

@@ -171,9 +171,6 @@ export default function Home() {
           <ul className="updates">
             <li>2026-03-09: Built my first Next.js + Vercel practice site.</li>
           </ul>
-          <p className="muted" style={{ marginTop: 10, marginBottom: 0, fontSize: 13 }}>
-            ※ Updates は後で “News” ページ化（Markdown運用）もできます。
-          </p>
         </div>
       </section>
 
