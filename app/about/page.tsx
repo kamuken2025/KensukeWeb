@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -22,6 +23,15 @@ export default function AboutPage() {
           integrating field measurements with image analysis and machine learning to deliver actionable maps and indicators.
         </p>
       </section>
+	  
+	  <Image
+		src="/profile_KK_20251003.jpg"
+		alt="Kensuke Kawamura"
+		width={160}
+		height={200}
+		style={{ borderRadius: 16, objectFit: "cover" }}
+		priority
+	　/>
 
       <section style={{ marginBottom: 28 }}>
         <h2 style={{ marginBottom: 8 }}>Focus areas</h2>
